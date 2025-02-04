@@ -1,7 +1,9 @@
 # S2 유기농배추
 import sys
 
-sys.setrecursionlimit(10**8)  # 런타임에러 해결용 리밋설정
+sys.setrecursionlimit(
+    10**8
+)  # 런타임에러 해결용 리밋설정 (재귀 함수 깊이로 인한 오류 해결)
 
 
 # DFS 알고리즘
