@@ -7,7 +7,8 @@ input = sys.stdin.readline
 
 
 # BFS 알고리즘
-# 가까운 노드부터 탐색하며, 탐색하는 단계(깊이)가 곹 촌수가 됨
+# DFS는 모든 경로를 탐색하기에 최단 거리를 구할 때는 BFS 알고리즘이 적합
+# 가까운 노드부터 탐색하며, 탐색하는 단계(깊이)가 곧 촌수가 됨
 # queue를 이용한 탐색 진행
 def bfs(start, target):
     queue = deque([(start, 0)])  # (현재 노드, 촌수)
