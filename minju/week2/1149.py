@@ -1,18 +1,17 @@
-M, N = map(int, input().split())
-prime = []
+number = int(input())
+paint_cost = []
+for _ in range(number):
+    paint_cost.append(list(map(int, input().split())))
 
-def check_prime(num):
-    if (num==2 or num==3):
-        return True
-    for i in prime:
-        if (i>num**(1/2)):
-            break
-        if (num%i==0):
-            return False
-    return True
+for i in range(1,len(paint_cost)):
+    for j in range(3):
+        if (j==0):
+            paint_cost[i][j] += min(paint_cost[i-1][1], paint_cost[i-1][2])
+        elif (j==1):
+            paint_cost[i][j] += min(paint_cost[i-1][0], paint_cost[i-1][2])
+        elif (j==2):
+            paint_cost[i][j] += min(paint_cost[i-1][0], paint_cost[i-1][1])
 
-for i in range(2,N+1):
-    if (check_prime(i)):
-        prime.append(i)
-        if (i>=M):
-            print(i)
+print(min(paint_cost[len(paint_cost)-1]))
+    
+        
